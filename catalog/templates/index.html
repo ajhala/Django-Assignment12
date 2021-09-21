@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1 font style="font-family: 'Times New Roman'" style="text-decoration: underline" >LOCAL LIBRARY</h1>
+
+<p font style="font-family: 'Times New Roman'">Welcome to <em>Library</em>,
+
+
+<div>
+{% load static %}
+<img src="{% static "images/library_background.jpg" %}" alt="My image"  width="400" height="300">
+</div>  
+
+
+<h2>Dynamic content</h2>
+
+<p>Following are the book counts</p>
+<ul>
+<li><strong>Books:</strong> {{ num_books }}</li>
+<li><strong>Copies:</strong> {{ num_instances }}</li>
+<li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+<li><strong>Authors:</strong> {{ num_authors }}</li>
+</ul>
+
+
+<p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+
+{% endblock %}
